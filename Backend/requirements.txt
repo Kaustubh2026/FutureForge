@@ -1,0 +1,8 @@
+Flask==2.2.3
+Flask-Cors==3.0.10
+boto3==1.26.89
+botocore==1.29.89
+python-dotenv==1.0.0
+boto3-stubs[lexv2-runtime]==1.26.89
+PyJWT==2.8.0
+bcrypt==4.1.2 
