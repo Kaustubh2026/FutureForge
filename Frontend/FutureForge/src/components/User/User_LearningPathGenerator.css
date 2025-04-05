@@ -1,0 +1,146 @@
+.learning-path-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.input-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.text-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.error-message {
+  background-color: #fdeded;
+  color: #b71c1c;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border-left: 4px solid #b71c1c;
+}
+
+.generate-button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.generate-button:hover {
+  background-color: #1976D2;
+}
+
+.generate-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #2196F3;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.roadmap-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.roadmap-container h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.roadmap-content {
+  line-height: 1.6;
+}
+
+.roadmap-content p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .learning-path-container {
+    padding: 1rem;
+  }
+
+  .input-form,
+  .roadmap-container {
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+} 

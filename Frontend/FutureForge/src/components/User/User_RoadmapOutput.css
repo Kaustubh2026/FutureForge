@@ -1,0 +1,138 @@
+.roadmap-output {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.roadmap-output h2 {
+  font-size: 24px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.roadmap-sections {
+  margin-bottom: 20px;
+}
+
+.roadmap-section {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: #f5f7fa;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.section-header:hover {
+  background-color: #e8f0fe;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #1a73e8;
+  cursor: pointer;
+}
+
+.section-content {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.section-content p {
+  margin: 0 0 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.section-content p:last-child {
+  margin-bottom: 0;
+}
+
+.list-items {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.list-items li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.roadmap-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.action-button {
+  padding: 10px 16px;
+  background-color: #f0f4f8;
+  color: #1a73e8;
+  border: 1px solid #d0d9e0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-button:hover {
+  background-color: #e1e9f0;
+}
+
+@media print {
+  .roadmap-actions {
+    display: none;
+  }
+  
+  .roadmap-section {
+    border: none;
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+  }
+  
+  .roadmap-section .section-header {
+    background-color: transparent;
+    padding: 0 0 8px 0;
+    border-bottom: 1px solid #000;
+  }
+  
+  .toggle-button {
+    display: none;
+  }
+  
+  .section-content {
+    display: block !important;
+    padding: 16px 0;
+    border-top: none;
+  }
+} 

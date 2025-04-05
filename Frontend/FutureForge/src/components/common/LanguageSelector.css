@@ -1,0 +1,294 @@
+.language-selector-container {
+  position: relative;
+  z-index: 1000;
+  width: fit-content;
+}
+
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: var(--neutral-700);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-button:hover {
+  background-color: var(--neutral-100);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.language-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.current-language {
+  margin: 0 4px;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  min-width: 180px;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.language-dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--neutral-700);
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.language-option:hover {
+  background-color: var(--neutral-100);
+}
+
+.language-option.selected {
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+  font-weight: 500;
+}
+
+.flag-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .language-dropdown {
+    right: -1rem;
+  }
+}
+
+/* Clean up the Google translate element */
+#google_translate_element {
+  margin: 0;
+  padding: 0;
+}
+
+/* Clean up the Google translate gadget text */
+#google_translate_element .goog-te-gadget {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: #4b5563;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove borders and clean up the Google translate button */
+#google_translate_element .goog-te-gadget-simple {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#google_translate_element .goog-te-gadget-simple:hover {
+  background-color: #f5f7fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Style the inner text of Google translate */
+#google_translate_element .goog-te-menu-value {
+  color: #4b5563;
+  text-decoration: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+#google_translate_element .goog-te-menu-value span:first-child {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+/* Hide Google translate icon */
+#google_translate_element .goog-te-gadget-icon {
+  display: none;
+}
+
+/* Hide separator in Google translate button */
+#google_translate_element .goog-te-menu-value span + img,
+#google_translate_element .goog-te-menu-value span[style="color: rgb(118, 118, 118);"] {
+  display: none !important;
+}
+
+/* Add a custom globe icon instead */
+#google_translate_element .goog-te-gadget-simple::before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='2' y1='12' x2='22' y2='12'%3E%3C/line%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'%3E%3C/path%3E%3C/svg%3E");
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 6px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Style the dropdown menu frame */
+.goog-te-menu-frame {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  border: none !important;
+  max-height: 80vh !important;
+  top: 10px !important;
+}
+
+/* Style the dropdown menu */
+.goog-te-menu2 {
+  background-color: white !important;
+  border: none !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  max-height: 70vh !important;
+}
+
+/* Style the menu items */
+.goog-te-menu2-item div {
+  padding: 8px 12px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 14px !important;
+  color: #4b5563 !important;
+  border-radius: 4px !important;
+  transition: all 0.15s ease !important;
+}
+
+/* Hover effect for menu items */
+.goog-te-menu2-item:hover div {
+  background-color: #f3f4f6 !important;
+}
+
+/* Selected menu item */
+.goog-te-menu2-item-selected div {
+  background-color: #e6f2ff !important;
+  color: #2563eb !important;
+  font-weight: 500 !important;
+}
+
+/* Hide Google Translate elements */
+.goog-te-banner-frame,
+.skiptranslate .goog-te-banner-frame,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+/* Fix body position after translation */
+body {
+  top: 0 !important;
+}
+
+/* Fix for any Google Translate artifacts */
+.goog-tooltip {
+  display: none !important;
+}
+
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Position the language selector for the login page */
+.login-language-selector {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+/* Make language selector responsive */
+@media (max-width: 640px) {
+  #google_translate_element .goog-te-gadget-simple {
+    padding: 4px 8px;
+  }
+  
+  #google_translate_element .goog-te-menu-value span:first-child {
+    font-size: 12px;
+  }
+}
+
+.dropdown-icon {
+  font-size: 10px;
+  margin-left: 6px;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dropdown-icon {
+    color: #9ca3af;
+  }
+}
+
+/* Select element styling */
+.goog-te-combo {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 14px !important;
+  color: #4b5563 !important;
+  font-weight: 500 !important;
+  appearance: none !important;
+  cursor: pointer !important;
+  min-width: 110px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .goog-te-combo {
+    color: #e5e7eb !important;
+  }
+} 

@@ -1,0 +1,363 @@
+.applications-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.applications-container h2 {
+  margin-bottom: 1.5rem;
+  color: #2563eb;
+  font-size: 1.5rem;
+}
+
+.applications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.applications-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.refresh-button {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.refresh-button:hover {
+  background-color: #e5e7eb;
+}
+
+.no-applications {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.no-applications p {
+  margin-bottom: 20px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.browse-jobs-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.browse-jobs-button:hover {
+  background-color: #1d4ed8;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.application-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #e5e7eb;
+}
+
+.application-card.status-pending {
+  border-left-color: #f59e0b;
+}
+
+.application-card.status-accepted {
+  border-left-color: #10b981;
+}
+
+.application-card.status-rejected {
+  border-left-color: #ef4444;
+}
+
+.application-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.application-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-icon {
+  font-size: 1rem;
+}
+
+.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-accepted {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.application-details {
+  padding: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+
+.detail-label {
+  width: 140px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.detail-value {
+  color: #1f2937;
+}
+
+.status-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  color: #4b5563;
+}
+
+.feedback-message {
+  font-style: italic;
+}
+
+.application-actions {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.withdraw-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.withdraw-button:hover {
+  background-color: #dc2626;
+}
+
+.withdrawing {
+  position: relative;
+  color: transparent;
+}
+
+.withdrawing::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 2px solid #f9fafb;
+  border-color: #f9fafb transparent #f9fafb transparent;
+  animation: dual-ring 1.2s linear infinite;
+}
+
+@keyframes dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.success-message, .error-message {
+  margin: 15px 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-message {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.close-button:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .applications-container {
+    padding: 1rem;
+  }
+  
+  .application-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-label {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .application-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .application-header {
+    border-bottom: 1px solid #333;
+  }
+  
+  .application-header h3 {
+    color: #e0e0e0;
+  }
+  
+  .detail-label {
+    color: #aaaaaa;
+  }
+  
+  .detail-value {
+    color: #e0e0e0;
+  }
+  
+  .application-feedback {
+    background-color: #2a2a2a;
+    border-top: 1px solid #333;
+  }
+  
+  .application-feedback h4 {
+    color: #e0e0e0;
+  }
+  
+  .application-feedback p {
+    color: #bbbbbb;
+  }
+  
+  .no-applications {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .applications-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .applications-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .applications-header h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .application-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .application-status {
+    margin-top: 0.5rem;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+  }
+  
+  .detail-value {
+    margin-top: 0.25rem;
+  }
+} 

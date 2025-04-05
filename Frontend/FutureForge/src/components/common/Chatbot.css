@@ -1,0 +1,238 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.chatbot-toggle-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #4b66ea;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle-btn:hover {
+  background-color: #3a50c5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-toggle-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slide-up 0.3s ease;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-header {
+  background-color: #4b66ea;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 80%;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.user-message {
+  background-color: #e1e6ff;
+  color: #333;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+  background-color: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 15px;
+  min-width: 60px;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #aaa;
+  border-radius: 50%;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.chatbot-input {
+  padding: 10px 15px;
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  background-color: white;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chatbot-input input:focus {
+  border-color: #4b66ea;
+}
+
+.chatbot-input button {
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  background-color: #4b66ea;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.chatbot-input button:hover {
+  background-color: #3a50c5;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: calc(100vw - 40px);
+    right: 0;
+  }
+  
+  .chatbot-toggle-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .chatbot-input input {
+    font-size: 16px; /* Better for mobile touch inputs */
+  }
+}
+
+.feedback-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  align-self: flex-end;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.bot-message:hover .feedback-buttons {
+  opacity: 0.7;
+}
+
+.feedback-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 4px;
+  color: #9e9ea7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.feedback-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #5e5e69;
+} 
